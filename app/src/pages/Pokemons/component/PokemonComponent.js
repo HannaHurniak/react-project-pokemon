@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import styles from './styles.module.scss'
 
@@ -18,6 +19,19 @@ const PokemonComponent = ({ pokemons, handleGoToPokemonDetails,
             <div className={styles.paginationWrapper}><div className={styles.pagination}><Pagination countPage={38} onPageChange={handleChangePage}/></div></div>
          </div>
      );
+}
+
+PokemonComponent.propTypes = {
+   pokemons: PropTypes.arrayOf(
+      PropTypes.shape({
+         id: PropTypes.number,
+         name: PropTypes.string,
+         image: PropTypes.string,
+         price: PropTypes.number,
+      })
+   ),
+   handleGoToPokemonDetails: PropTypes.func,
+   handleChangePage: PropTypes.func,
 }
  
 export default PokemonComponent;

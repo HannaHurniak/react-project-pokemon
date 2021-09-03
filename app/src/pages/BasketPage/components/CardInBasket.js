@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import styles from './styles.module.scss'
 import CounterOfQuantity from './../../../commonComponents/CounterOfQuantity/components/CounterComponent'
@@ -13,4 +14,17 @@ const CardInBasketComponent = ({ card, handleIncrement, quantity, handleDecremen
     </div> );
 }
  
+CardInBasketComponent.propTypes = {
+    card: PropTypes.shape({
+        id: PropTypes.number,
+        name: PropTypes.string,
+        image: PropTypes.string,
+        quantity: PropTypes.number,
+        price: PropTypes.number,
+    }),
+    quantity: PropTypes.number,
+    handleIncrement: PropTypes.func,
+    handleDecrement: PropTypes.func,
+}
+
 export default React.memo(CardInBasketComponent);

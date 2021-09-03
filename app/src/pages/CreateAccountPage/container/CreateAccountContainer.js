@@ -33,7 +33,6 @@ const CreateAccountContainer = () => {
         return values.findIndex((value) => value === '') !== -1;
     }, [formValues])
 
-
     const currencies = [
         {
           value: 'male',

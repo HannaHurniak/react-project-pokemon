@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import LoginInputComponent from '../../../commonComponents/LoginInput/LoginInputComponent'
 import { Box, withStyles, Button } from '@material-ui/core';
 
@@ -43,5 +44,16 @@ const LoginPageLayout = ({ classes, loginData, handleChange, handleSubmit,
         
      );
 }
- 
+
+LoginPageLayout.propTypes = {
+    loginData: PropTypes.shape({
+        email: PropTypes.string,
+        password: PropTypes.string,
+    }),
+    handleChange: PropTypes.func,
+    handleSubmit: PropTypes.func,
+    handleCreateAccount: PropTypes.func,
+    errors: PropTypes.string,
+}
+
 export default withStyles(styles)(LoginPageLayout);

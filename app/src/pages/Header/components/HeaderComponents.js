@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { IconButton, Badge } from '@material-ui/core';
@@ -30,5 +31,12 @@ const HeaderComponent = ({ isAuth, quantity, handelLogout, handleGoToBasket }) =
         </div>
     );
 };
+
+HeaderComponent.propTypes = {
+    isAuth: PropTypes.bool,
+    quantity: PropTypes.number,
+    handelLogout: PropTypes.func,
+    handleGoToBasket: PropTypes.func,
+}
 
 export default HeaderComponent;

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import styles from './styles.module.scss'
 
@@ -20,6 +21,33 @@ const BasketComponent = ({ basket, itemsList, handleCreateOrder, handleIncrement
             }
         </div>
      );
+}
+
+BasketComponent.propTypes = {
+    basket: PropTypes.shape({
+        totalPrice: PropTypes.number,
+        quantity: PropTypes.number,
+        itemsList: PropTypes.arrayOf(
+            PropTypes.shape({
+                id: PropTypes.number,
+                name: PropTypes.string,
+                image: PropTypes.string,
+                quantity: PropTypes.number,
+                price: PropTypes.number,
+            })
+        )
+    }),
+    itemsList: PropTypes.shape({
+        id: PropTypes.number,
+        name: PropTypes.string,
+        image: PropTypes.string,
+        quantity: PropTypes.number,
+        price: PropTypes.number,
+    }),
+    handleCreateOrder: PropTypes.func,
+    handleIncrement: PropTypes.func,
+    handleDecrement: PropTypes.func,
+    createdAt: PropTypes.string,
 }
  
 export default React.memo(BasketComponent);
