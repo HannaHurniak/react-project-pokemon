@@ -1,0 +1,7 @@
+export const POSTFIXES= {
+    REQUEST_POSTFIX: '_REQUEST',
+    SUCCESS_POSTFIX: '_SUCCESS',
+    FAIL_POSTFIX: '_FAIL',
+}
+
+// export const REQUEST_PENDING_DELAY = 200;
